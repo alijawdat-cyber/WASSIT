@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* متغيرات CSS الرئيسية - أساس التصميم */
+:root {
+  /* الألوان الأساسية */
+  --background: #ffffff;
+  --foreground: #171717;
+  
+  /* ألوان العلامة التجارية */
+  --primary: #2C6E49;
+  --primary-light: #4D8B74;
+  --primary-dark: #1A5A36;
+  --secondary: #F4A261;
+  --secondary-light: #F6B987;
+  --secondary-dark: #E18845;
+  --accent: #264653;
+  --accent-light: #546A76;
+  --accent-dark: #1A3640;
+  
+  /* ألوان الحالة */
+  --success: #38a169;
+  --warning: #ecc94b;
+  --danger: #e53e3e;
+  --info: #3182ce;
+  
+  /* المسافات والحدود */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 1rem;
+  
+  /* متغيرات الانتقال */
+  --transition-fast: 150ms;
+  --transition-normal: 250ms;
+  --transition-slow: 350ms;
+}
+
+/* ربط متغيرات CSS مع Tailwind */
+@layer base {
+  :root {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+  
+    /* ألوان العلامة التجارية */
+    --color-primary: var(--primary);
+    --color-primary-light: var(--primary-light);
+    --color-primary-dark: var(--primary-dark);
+    --color-secondary: var(--secondary);
+    --color-secondary-light: var(--secondary-light);
+    --color-secondary-dark: var(--secondary-dark);
+    --color-accent: var(--accent);
+    --color-accent-light: var(--accent-light);
+    --color-accent-dark: var(--accent-dark);
+  
+    /* ألوان الحالة */
+    --color-success: var(--success);
+    --color-warning: var(--warning);
+    --color-danger: var(--danger);
+    --color-info: var(--info);
+  
+    /* الخطوط */
+    --font-sans: var(--font-geist-sans, system-ui, sans-serif);
+    --font-mono: var(--font-geist-mono, ui-monospace, monospace);
+  }
+  
+  /* إعدادات العناصر الأساسية */
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: "Tajawal", Arial, Helvetica, sans-serif;
+    transition: 
+      background-color var(--transition-normal) ease-in-out,
+      color var(--transition-normal) ease-in-out;
+  }
+  
+  /* تحسينات قراءة النص */
+  p, li, h1, h2, h3, h4, h5, h6 {
+    line-height: 1.6;
+  }
+  
+  /* روابط الموقع */
+  a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color var(--transition-fast) ease;
+  }
+  
+  a:hover {
+    color: var(--primary-dark);
+  }
+}
+
+/* الوضع المظلم */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    
+    /* ألوان العلامة التجارية - الوضع المظلم */
+    --primary: #4D8B74;
+    --primary-light: #6BA994;
+    --primary-dark: #205A40;
+    --secondary: #F6B987;
+    --secondary-light: #F8D1A7;
+    --secondary-dark: #E18845;
+    --accent: #546A76;
+    --accent-light: #7B8D96;
+    --accent-dark: #3A4A54;
+  }
+}
+
+@layer components {
+  /* دعم الاتجاه RTL للغة العربية */
+  .rtl {
+    direction: rtl;
+    text-align: right;
+  }
+  
+  .ltr {
+    direction: ltr;
+    text-align: left;
+  }
+  
+  /* خطوط خاصة */
+  .arabic-font {
+    font-family: "Tajawal", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  }
+  
+  /* فئات مساعدة */
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+}
+
+/* تحسينات للأجهزة المحمولة */
+@media (max-width: 640px) {
+  :root {
+    --radius-lg: 0.375rem;
+    --radius-xl: 0.5rem;
+  }
+  
+  .container {
+    padding: 0 0.75rem;
+  }
+}
