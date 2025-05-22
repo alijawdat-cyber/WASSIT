@@ -12,7 +12,8 @@ const config = {
   
   // تكوين الخادم
   server: {
-    port: process.env.PORT || 5000,
+    // المنفذ الافتراضي للخادم موحد على 4000
+    port: process.env.PORT || 4000,
   },
   
   // تكوين قاعدة البيانات

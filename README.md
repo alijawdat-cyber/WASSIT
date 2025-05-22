@@ -36,6 +36,7 @@ npm run dev
 cd backend
 npm install
 npm run dev
+# يظهر في المخرجات `Server running on port 4000`
 ```
 
 ## المساهمة

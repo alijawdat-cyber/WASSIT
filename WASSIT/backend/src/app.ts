@@ -99,8 +99,8 @@ app.use((err: any, req: express.Request, res: express.Response, next: express.Ne
 
 // تشغيل الخادم
 app.listen(port, () => {
-  console.log(`🚀 الخادم يعمل على المنفذ ${port}`);
-  console.log(`🔗 رابط الوصول: http://localhost:${port}`);
+  console.log(`Server running on port ${port}`);
+  console.log(`Access URL: http://localhost:${port}`);
   console.log(`🛢️  قاعدة البيانات متصلة`);
 });
 
